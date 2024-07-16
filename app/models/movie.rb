@@ -12,5 +12,5 @@
 #  updated_at  :datetime         not null
 #  director_id :integer
 #
-class Movie < ApplicationRecord
+class Movie < ActiveRecord::Base
 end

@@ -10,5 +10,5 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
-class Actor < ApplicationRecord
+class Actor < ActiveRecord::Base
 end

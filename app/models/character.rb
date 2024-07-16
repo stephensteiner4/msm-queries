@@ -9,5 +9,6 @@
 #  actor_id   :integer
 #  movie_id   :integer
 #
-class Character < ApplicationRecord
+class Character < ActiveRecord
+  
 end
