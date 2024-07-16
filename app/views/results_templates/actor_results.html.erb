@@ -1,6 +1,5 @@
 <h1>Actor #<%= @act_id%> Details</h1>
-
-<p><a href="/actors">Go back</a></p>
+<a href="/actors">Go back</a>
 
 <hr>
 
@@ -24,16 +23,27 @@
 
 <h2>Filmography</h2>
 
-<table>
-  <thead border="1;">
+<table border="1;">
+  <thead>
     <th>Title</th>
     <th>Year</th>
     <th>Director</th>
     <th>Character Name</th>
     <th></th>
   </thead>
+
   <tbody>
-    
+    <% @char_list.each do |char| %>
+      <% x = Movie.where({:id => char.movie_id}).at(0).director_id %>
+      <tr>
+        <td><%= Movie.where({:id => char.movie_id}).at(0).title%></td>
+        <td><%= Movie.where({:id => char.movie_id}).at(0).year%></td>
+        <td><%= Director.where({:id => x}).at(0).name%></td>
+        <td><%= char.name%></td>
+        <td><a href="/movies/<%= char.movie_id.to_s%>">Show details</a> 
+      </tr>
+    <% end %>
   </tbody>
+
 
 </table>

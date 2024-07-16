@@ -9,6 +9,6 @@
 #  actor_id   :integer
 #  movie_id   :integer
 #
-class Character < ActiveRecord
-  
+class Character < ActiveRecord::Base
+
 end

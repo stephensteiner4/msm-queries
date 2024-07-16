@@ -10,6 +10,10 @@ class BrushController < ApplicationController
 
     @act_info = Actor.where({:id => @act_id}).at(0)
 
+    @char_list = Character.where({:actor_id => @act_id})
+
+    ###@filmography = Movie.where({:id => Character.all.movie_id})
+
     render({:template => "results_templates/actor_results"
   })
   end
