@@ -1,0 +1,5 @@
+<h1> Youngest director </h1>
+
+<% @min_age = Director.all.where({:dob => Director.maximum(:dob)}).at(0) %>
+
+<p> The youngest director in our dataset right now is <a href="/directors/<%=@min_age.id%>"><%= @min_age.name %></a>, born on <%= @min_age.dob.strftime("%B %d, %Y")%>.</p>

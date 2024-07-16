@@ -15,4 +15,16 @@ class PainterController < ApplicationController
     render({:template => "results_templates/director_results"
   })
   end
+
+  def old
+    
+
+    render({:template => "age_templates/eldest"})
+  end
+
+  def young
+    
+
+    render({:template => "age_templates/youngest"})
+  end
 end
